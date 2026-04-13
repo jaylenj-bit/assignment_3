@@ -3,19 +3,19 @@
 <head>
     <title>Resume: Jaylen Johnson</title>
     <style>
-        body {
+
+body {
   background-color: gray;
+  margin: 0;
 }
 
+/* REMOVE custom font */
 h1, h2, footer {
   text-align: center;
-  font-family: "Lucida Console", "Courier New", monospace;
 }
-
 
 #header {
   background-color: #126180;
- 
   margin: 10px;
   display: flex;
   flex-direction: column;
@@ -26,88 +26,70 @@ h1, h2, footer {
   display: flex;
   justify-content: center;
   gap: 10px;
-  padding: 5px;
+  padding: 10px;
   margin: 10px;
-  flex-wrap: nowrap;
 }
 
-
+/* KEY FIXES HERE */
 .box {
-  flex: 1 1 0;
-  min-width: 0px;
-  height: 200px;
+  flex: 1;
   padding: 10px;
-  flex-direction: column;
   display: flex;
+  flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
-  font-weight: bold;
+
+  /* allows text to wrap instead of overflow */
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
-
-
+/* remove fixed height so content can grow */
 #edu, #exp, #contact { 
 	background-color: #21abcd; 
 }
 
-        .job-title {
-            color: blue;
-            text-decoration: underline;
-            font-weight: normal;
-            display: inline-block;
-            margin-bottom: 4px;
-        }
+/* simple formatting */
+.job-title {
+    color: blue;
+    text-decoration: underline;
+}
 
-        .job-role {
-            font-weight: bold;
-        }
+.job-role {
+    font-weight: bold;
+}
 
-        .job-date {
-            font-style: italic;
-            margin-top: 2px;
-            margin-bottom: 10px;
-        }
+.job-date {
+    font-style: italic;
+    margin-bottom: 10px;
+}
 
-        .job-img {
-            width: 85px;
-            height: 85px;
-            object-fit: contain;
-            margin: 10px 0;
-        }
+input[type="number"] {
+    width: 50px;
+}
 
-        input[type="number"] {
-            width: 40px;
-            text-align: center;
-        }
+button {
+    margin: 5px 0;
+}
 
-        button {
-            font-size: 12px;
-            padding: 2px 8px;
-            cursor: pointer;
-        }
+.result {
+    margin-top: 10px;
+}
 
-        .result {
-            margin-top: 10px;
-            line-height: 1.4;
-        }
+ul {
+    padding-left: 15px;
+}
 
-        ul {
-            list-style-type: none;
-            padding-left: 0;
-            margin-top: 8px;
-        }
+footer {
+    text-align: center;
+    margin-top: 10px;
+}
 
-        footer {
-            text-align: center;
-            margin-top: 12px;
-            padding-bottom: 8px;
-        }
+footer a {
+    color: blue;
+    text-decoration: none;
+}
 
-        footer a {
-            color: blue;
-            font-weight: bold;
-            text-decoration: none;
-        }
     </style>
 </head>
 
@@ -134,8 +116,6 @@ h1, h2, footer {
                 <span class="job-role">Freelancer</span>
                 <div class="job-date">2025 - present</div>
 
-                <img src="https://cdn-icons-png.flaticon.com/512/1006/1006363.png" alt="Web Developer" class="job-img">
-
                 <div>
                     <button onclick="showJob1()">Click</button>
                     to see my top
@@ -152,8 +132,6 @@ h1, h2, footer {
                 <span class="job-role">Secondary Web Developer</span>
                 <div class="job-date">2023 - 2024</div>
 
-                <img src="https://cdn-icons-png.flaticon.com/512/2920/2920277.png" alt="Office Job" class="job-img">
-
                 <div>
                     <button onclick="showJob2()">Click</button>
                     to see my top
@@ -167,28 +145,25 @@ h1, h2, footer {
         </div>
 
         <footer>
-            <a href="mailto:jayandjohnson2510@gmail.com">✉ Email me!</a>
+            <a href="mailto:jayandjohnson2510@gmail.com">Email me</a>
         </footer>
     </div>
 
-    <script type="text/javascript">
+    <script>
         function showJob1() {
             var num = document.getElementById("dutyNum1").value;
             num = parseInt(num);
 
-            var duties = ["Call businesses", "Make websites", "Attend business meetings", "Close sales"];
+            var duties = ["Call businesses", "Make websites", "Attend meetings", "Close sales"];
 
             if (num > duties.length || num <= 0 || isNaN(num)) {
                 document.getElementById("change1").innerHTML = "Please enter a valid number.";
             } else {
                 var text = "<ul>";
-
                 for (var i = 0; i < num; i++) {
-                    text = text + "<li>" + duties[i] + "</li>";
+                    text += "<li>" + duties[i] + "</li>";
                 }
-
-                text = text + "</ul>";
-
+                text += "</ul>";
                 document.getElementById("change1").innerHTML = text;
             }
         }
@@ -197,19 +172,16 @@ h1, h2, footer {
             var num = document.getElementById("dutyNum2").value;
             num = parseInt(num);
 
-            var duties = ["Study social media algorithms", "Build social media presence", "Promote business online", "Edit company website"];
+            var duties = ["Study algorithms", "Build social presence", "Promote business", "Edit website"];
 
             if (num > duties.length || num <= 0 || isNaN(num)) {
                 document.getElementById("change2").innerHTML = "Please enter a valid number.";
             } else {
                 var text = "<ul>";
-
                 for (var i = 0; i < num; i++) {
-                    text = text + "<li>" + duties[i] + "</li>";
+                    text += "<li>" + duties[i] + "</li>";
                 }
-
-                text = text + "</ul>";
-
+                text += "</ul>";
                 document.getElementById("change2").innerHTML = text;
             }
         }
