@@ -1,162 +1,237 @@
 <!DOCTYPE html>
 <html>
 <head>
-<style>
+    <title>Resume: Jaylen Johnson</title>
+    <style>
+        body {
+            background-color: #a7b89d;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
 
-body {
-  background-color: gray;
-}
+        h1 {
+            text-align: center;
+            font-family: "Lucida Console", "Courier New", monospace;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
 
-h1, h2, footer {
-  text-align: center;
-  font-family: "Lucida Console", "Courier New", monospace;
-}
+        #header {
+            width: 96%;
+            margin: 0 auto;
+            background-color: #6f9da1;
+            border-radius: 6px;
+            padding-bottom: 10px;
+        }
 
+        #header h2 {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            font-size: 24px;
+            padding-top: 10px;
+            margin-bottom: 10px;
+        }
 
-#header {
-  background-color: #126180;
- 
-  margin: 10px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
+        .boxes {
+            width: 98%;
+            margin: 0 auto;
+            background-color: #83afb1;
+            display: flex;
+            justify-content: space-between;
+            padding: 30px 20px;
+            box-sizing: border-box;
+        }
 
-.boxes {
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-  padding: 5px;
-  margin: 10px;
-  flex-wrap: nowrap;
-}
+        .box {
+            width: 30%;
+            text-align: center;
+            font-size: 14px;
+        }
 
+        #edu {
+            text-align: left;
+        }
 
-.box {
-  flex: 1 1 0;
-  min-width: 0px;
-  height: 200px;
-  padding: 10px;
-  flex-direction: column;
-  display: flex;
-  align-items: flex-start;
-  justify-content: flex-start;
-  font-weight: bold;
-}
+        #edu h3,
+        #exp h3,
+        #contact h3 {
+            text-align: center;
+            margin-top: 0;
+            margin-bottom: 10px;
+            font-size: 20px;
+        }
 
+        #edu a {
+            color: blue;
+            display: block;
+            margin-bottom: 6px;
+            font-size: 14px;
+        }
 
+        .job-title {
+            color: blue;
+            text-decoration: underline;
+            font-weight: normal;
+            display: inline-block;
+            margin-bottom: 4px;
+        }
 
-#edu, #exp, #contact { 
-	background-color: #21abcd; 
-}
- 
+        .job-role {
+            font-weight: bold;
+        }
 
-</style>
+        .job-date {
+            font-style: italic;
+            margin-top: 2px;
+            margin-bottom: 10px;
+        }
+
+        .job-img {
+            width: 85px;
+            height: 85px;
+            object-fit: contain;
+            margin: 10px 0;
+        }
+
+        input[type="number"] {
+            width: 40px;
+            text-align: center;
+        }
+
+        button {
+            font-size: 12px;
+            padding: 2px 8px;
+            cursor: pointer;
+        }
+
+        .result {
+            margin-top: 10px;
+            line-height: 1.4;
+        }
+
+        ul {
+            list-style-type: none;
+            padding-left: 0;
+            margin-top: 8px;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 12px;
+            padding-bottom: 8px;
+        }
+
+        footer a {
+            color: blue;
+            font-weight: bold;
+            text-decoration: none;
+        }
+    </style>
 </head>
 
 <body>
-  
-    <h1>Resume: Jaylen Johnson</h1>
+
+    <h1>Resume of Jaylen Johnson</h1>
 
     <div id="header">
-      <h2>Work Experience</h2>
+        <h2>WORK EXPERIENCE</h2>
 
-      <div class="boxes">
-        <div id="edu" class="box">
-		<h3>Other Pages</h3>
-		
-		<ol>
-			<li><a href="">Work Experience</a>
-			<li><a href="education.html">Education Experience</a>
-			<li><a href="rewards.html">Related Rewards and Stats</a>
-		</ol>
-		</div>
-		
-		
-        <div id="exp" class="box">
-		<dl>
-		<dt>Freelancing: Web developer</dt>
-		<dd>Certificate in HTML/CSS</dd>
-		<dd>I currently sale websites to businesses that don't have one or need an upgrade</dd>
-		<dd> 2025 - current </dd>
-		</dl>
-			<label>Enter number of duties: </label>
-    <input type="number" id="dutyNum">
+        <div class="boxes">
 
-    <button onclick="theFunction()">Check</button>
+            <div id="edu" class="box">
+                <h3>Other Pages</h3>
+                <a href="">Work Experience</a>
+                <a href="education.html">Educational Experience</a>
+                <a href="rewards.html">Related Awards and Skills</a>
+                <a href="salary.html">Salary Calculator</a>
+            </div>
 
-    <p>The duties are:</p>
-    <p id="change"></p>
+            <div id="exp" class="box">
+                <h3>Freelancing</h3>
+                <span class="job-title">Web Developer</span><br>
+                <span class="job-role">Freelancer</span>
+                <div class="job-date">2025 - present</div>
 
-    <script type="text/javascript">
-        function theFunction() {
-            var num = document.getElementById("dutyNum").value;
-            num = parseInt(num);
+                <img src="https://cdn-icons-png.flaticon.com/512/1006/1006363.png" alt="Web Developer" class="job-img">
 
-            var duties = ["Call businesses", "Make websites", "Attend business meetings", "Be able to close sales"];
+                <div>
+                    <button onclick="showJob1()">Click</button>
+                    to see my top
+                    <input type="number" id="dutyNum1">
+                    job duties here:
+                </div>
 
-            if (num > duties.length || num <= 0 || isNaN(num)) {
-                document.getElementById("change").innerHTML = "Please enter a valid number.";
-            } else {
-                var text = "Number of duties performed: " + num + "<ul>";
+                <div id="change1" class="result"></div>
+            </div>
 
-                for (var i = 0; i < num; i++) {
-                    text = text + "<li>" + duties[i] + "</li>";
-                }
+            <div id="contact" class="box">
+                <h3>PQ Prints</h3>
+                <span class="job-title">Social Media Manager</span><br>
+                <span class="job-role">Secondary Web Developer</span>
+                <div class="job-date">2023 - 2024</div>
 
-                text = text + "</ul>";
+                <img src="https://cdn-icons-png.flaticon.com/512/2920/2920277.png" alt="Office Job" class="job-img">
 
-                document.getElementById("change").innerHTML = text;
-            }
-        }
-    </script>
-		
-		</div>
-        <div id="contact" class="box">
-		<dl>
-		<dt>PQ prints</dt>
-		<dd>I was a social media manager as well as a secondary web developer. I was responsible for analysing social media activity, regonizing trends and gaining traffic to our brand. </dd>
-		<dd>2023 - 2024</dd>
-		
-		</dl>
-		<label>Enter number of duties: </label>
-    <input type="number" id="dutyNum">
+                <div>
+                    <button onclick="showJob2()">Click</button>
+                    to see my top
+                    <input type="number" id="dutyNum2">
+                    job duties here:
+                </div>
 
-    <button onclick="theFunction()">Check</button>
+                <div id="change2" class="result"></div>
+            </div>
 
-    <p>The duties are:</p>
-    <p id="change"></p>
+        </div>
 
-    <script type="text/javascript">
-        function theFunction() {
-            var num = document.getElementById("dutyNum").value;
-            num = parseInt(num);
-
-            var duties = ["Study social media algorithm functions", "Talor social media presence", "Promote business across Social platforms", "Edit company website"];
-
-            if (num > duties.length || num <= 0 || isNaN(num)) {
-                document.getElementById("change").innerHTML = "Please enter a valid number.";
-            } else {
-                var text = "Number of duties performed: " + num + "<ul>";
-
-                for (var i = 0; i < num; i++) {
-                    text = text + "<li>" + duties[i] + "</li>";
-                }
-
-                text = text + "</ul>";
-
-                document.getElementById("change").innerHTML = text;
-            }
-        }
-    </script>
-		</div>
-      </div>
-
-      <footer>
-        <a href="mailto:jayandjohnson2510@gmail.com">Email me </a>
-		<p>Internal</p>
-      </footer>
+        <footer>
+            <a href="mailto:jayandjohnson2510@gmail.com">✉ Email me!</a>
+        </footer>
     </div>
+
+    <script type="text/javascript">
+        function showJob1() {
+            var num = document.getElementById("dutyNum1").value;
+            num = parseInt(num);
+
+            var duties = ["Call businesses", "Make websites", "Attend business meetings", "Close sales"];
+
+            if (num > duties.length || num <= 0 || isNaN(num)) {
+                document.getElementById("change1").innerHTML = "Please enter a valid number.";
+            } else {
+                var text = "<ul>";
+
+                for (var i = 0; i < num; i++) {
+                    text = text + "<li>" + duties[i] + "</li>";
+                }
+
+                text = text + "</ul>";
+
+                document.getElementById("change1").innerHTML = text;
+            }
+        }
+
+        function showJob2() {
+            var num = document.getElementById("dutyNum2").value;
+            num = parseInt(num);
+
+            var duties = ["Study social media algorithms", "Build social media presence", "Promote business online", "Edit company website"];
+
+            if (num > duties.length || num <= 0 || isNaN(num)) {
+                document.getElementById("change2").innerHTML = "Please enter a valid number.";
+            } else {
+                var text = "<ul>";
+
+                for (var i = 0; i < num; i++) {
+                    text = text + "<li>" + duties[i] + "</li>";
+                }
+
+                text = text + "</ul>";
+
+                document.getElementById("change2").innerHTML = text;
+            }
+        }
+    </script>
 
 </body>
 </html>
