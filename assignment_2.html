@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+
+body {
+  background-color: gray;
+}
+
+h1, h2, footer {
+  text-align: center;
+  font-family: "Lucida Console", "Courier New", monospace;
+}
+
+
+#header {
+  background-color: #126180;
+ 
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.boxes {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  padding: 5px;
+  margin: 10px;
+  flex-wrap: nowrap;
+}
+
+
+.box {
+  flex: 1 1 0;
+  min-width: 0px;
+  height: 200px;
+  padding: 10px;
+  flex-direction: column;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  font-weight: bold;
+}
+
+
+
+#edu, #exp, #contact { 
+	background-color: #21abcd; 
+}
+ 
+
+</style>
+</head>
+
+<body>
+  
+    <h1>Resume: Jaylen Johnson</h1>
+
+    <div id="header">
+      <h2>Work Experience</h2>
+
+      <div class="boxes">
+        <div id="edu" class="box">
+		<h3>Other Pages</h3>
+		
+		<ol>
+			<li><a href="">Work Experience</a>
+			<li><a href="education.html">Education Experience</a>
+			<li><a href="rewards.html">Related Rewards and Stats</a>
+		</ol>
+		</div>
+		
+		
+        <div id="exp" class="box">
+		<dl>
+		<dt>Freelancing: Web developer</dt>
+		<dd>Certificate in HTML/CSS</dd>
+		<dd>I currently sale websites to businesses that don't have one or need an upgrade</dd>
+		<dd> 2025 - current </dd>
+		</dl>
+		
+		</div>
+        <div id="contact" class="box">
+		<dl>
+		<dt>PQ prints</dt>
+		<dd>I was a social media manager as well as a secondary web developer. I was responsible for analysing social media activity, regonizing trends and gaining traffic to our brand. </dd>
+		<dd>2023 - 2024</dd>
+		
+		</dl>
+		
+		</div>
+      </div>
+
+      <footer>
+        <a href="mailto:jayandjohnson2510@gmail.com">Email me </a>
+		<p>Internal</p>
+      </footer>
+    </div>
+
+</body>
+</html>
