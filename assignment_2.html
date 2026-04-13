@@ -80,6 +80,36 @@ h1, h2, footer {
 		<dd>I currently sale websites to businesses that don't have one or need an upgrade</dd>
 		<dd> 2025 - current </dd>
 		</dl>
+			<label>Enter number of duties: </label>
+    <input type="number" id="dutyNum">
+
+    <button onclick="theFunction()">Check</button>
+
+    <p>The duties are:</p>
+    <p id="change"></p>
+
+    <script type="text/javascript">
+        function theFunction() {
+            var num = document.getElementById("dutyNum").value;
+            num = parseInt(num);
+
+            var duties = ["Call businesses", "Make websites", "Attend business meetings", "Be able to close sales"];
+
+            if (num > duties.length || num <= 0 || isNaN(num)) {
+                document.getElementById("change").innerHTML = "Please enter a valid number.";
+            } else {
+                var text = "Number of duties performed: " + num + "<ul>";
+
+                for (var i = 0; i < num; i++) {
+                    text = text + "<li>" + duties[i] + "</li>";
+                }
+
+                text = text + "</ul>";
+
+                document.getElementById("change").innerHTML = text;
+            }
+        }
+    </script>
 		
 		</div>
         <div id="contact" class="box">
@@ -89,7 +119,36 @@ h1, h2, footer {
 		<dd>2023 - 2024</dd>
 		
 		</dl>
-		
+		<label>Enter number of duties: </label>
+    <input type="number" id="dutyNum">
+
+    <button onclick="theFunction()">Check</button>
+
+    <p>The duties are:</p>
+    <p id="change"></p>
+
+    <script type="text/javascript">
+        function theFunction() {
+            var num = document.getElementById("dutyNum").value;
+            num = parseInt(num);
+
+            var duties = ["Study social media algorithm functions", "Talor social media presence", "Promote business across Social platforms", "Edit company website"];
+
+            if (num > duties.length || num <= 0 || isNaN(num)) {
+                document.getElementById("change").innerHTML = "Please enter a valid number.";
+            } else {
+                var text = "Number of duties performed: " + num + "<ul>";
+
+                for (var i = 0; i < num; i++) {
+                    text = text + "<li>" + duties[i] + "</li>";
+                }
+
+                text = text + "</ul>";
+
+                document.getElementById("change").innerHTML = text;
+            }
+        }
+    </script>
 		</div>
       </div>
 
