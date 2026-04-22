@@ -93,71 +93,121 @@
         }
     </style>
 </head>
-
 <body>
 
-    <h1>Jaylen Johnson Resume</h1>
+<h1>How To Sell</h1>
 
-    <div id="header">
-        <h2>Salary Calculator</h2>
+<div id="header">
 
-        <div class="boxes">
-            <div id="edu" class="box">
-                <h3>Navagation</h3>
-                <a href="assignment_2.html">Work Experience</a>
-                <a href="education.html">Educational Experience</a>
-                <a href="rewards.html">Related Awards and Skills</a>
-                <a href="assignment_3.html">Salary Calculator</a>
-            </div>
+    <h2>Sales Basics</h2>
 
-            <div id="exp" class="box">
-                <p>Please fill out the information below to see how much of a salary an hourly wage equals.</p>
+    <div class="boxes">
 
-                <div class="form-group">
-                    <label>Enter the hourly rate: </label>
-                    <input type="text" id="hourlyRate">
-                </div>
-
-                <div class="form-group">
-                    <label>Enter hours per week: </label>
-                    <input type="text" id="hoursPerWeek">
-                </div>
-
-                <button onclick="theFunction()">Check</button>
-
-                <p>The salary is:</p>
-                <p id="change"></p>
-            </div>
-
-            <div id="contact" class="box">
-                <p>Coming Soon</p>
-            </div>
+        <div id="box1" class="box">
+            <h3>Focus</h3>
+            <p>Focus on outcome, emotion, and time.</p>
+            <p>People care about what your product does for them.</p>
         </div>
 
-        <footer>
-            <a href="mailto:jayandjohnson2510@gmail.com">Email me!</a>
-        </footer>
+        <div id="box2" class="box">
+            <h3>Energy</h3>
+            <p>Your attitude matters.</p>
+            <p>If you are confident, people respond better.</p>
+        </div>
+
+        <div id="box3" class="box">
+            <h3>Time</h3>
+            <p>People want fast results.</p>
+            <p>They don’t want to wait months.</p>
+        </div>
+
     </div>
 
-    <script type="text/javascript">
-	
-    function theFunction() {
-        var hourly = document.getElementById("hourlyRate").value;
-        var hours = document.getElementById("hoursPerWeek").value;
-        var salary = hourly * hours * 52;
-        var message;
+    <h2>How Sales Works</h2>
 
+    <div class="boxes">
 
-        if (salary < 20000) {
-            message = "The salary is too little.";
-        } else if (salary >= 20000 && salary <= 25000) {
-            message = "The salary is almost enough. Let’s negotiate.";
-        } else {
-            message = "This is a great salary for me.";
-        }
+        <div id="box4" class="box">
+            <h3>Ask Questions</h3>
+            <p>Don’t just talk.</p>
+            <p>Let the customer explain their problem.</p>
+        </div>
 
-        document.getElementById("change").innerHTML = "$" + salary + message;
-    }
-    </script>
+        <div id="box5" class="box">
+            <h3>Find Problem</h3>
+            <p>Understand what they need.</p>
+            <p>Listen carefully.</p>
+        </div>
+
+        <div id="box6" class="box">
+            <h3>Give Solution</h3>
+            <p>Show how your product helps.</p>
+            <p>Be helpful, not pushy.</p>
+        </div>
+
+    </div>
+
+    <h2>Product Strategy</h2>
+
+    <div class="boxes">
+
+        <div id="box7" class="box">
+            <h3>Find Audience</h3>
+            <p>Pick a group of people.</p>
+            <p>Find what they need.</p>
+        </div>
+
+        <div id="box8" class="box">
+            <h3>Match Product</h3>
+            <p>Sell the right thing to the right people.</p>
+        </div>
+
+        <div id="box9" class="box">
+            <h3>Be the Solution</h3>
+            <p>Fix their problem with your product.</p>
+        </div>
+
+    </div>
+
+    <h2>Problems</h2>
+
+    <div class="boxes">
+
+        <div id="box10" class="box">
+            <h3>Time</h3>
+            <p>Business owners are busy.</p>
+        </div>
+
+        <div id="box11" class="box">
+            <h3>Money</h3>
+            <p>Things can be expensive.</p>
+        </div>
+
+    </div>
+
+    <h2>Solutions</h2>
+
+    <div class="boxes">
+
+        <div id="box12" class="box">
+            <p>Better conversions</p>
+        </div>
+
+        <div id="box13" class="box">
+            <p>Affordable pricing</p>
+        </div>
+
+        <div id="box14" class="box">
+            <p>More customers</p>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>Made by Jaylen Johnson</p>
+    </footer>
+
+</div>
+
 </body>
 </html>
